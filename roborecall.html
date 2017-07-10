@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head><title></title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body onload="startTime()">
+        
+        <div id="topBar">
+            <img class="vrcadeLogo" src="img/logo-yellow.png" width="260px">
+            <div id="txtTime"> </div>
+            
+        </div>
+        
+        <div id="gameTitle"> </div>
+        
+        <br>
+        <div class="gameDes_flexcontainer">
+        <iframe src="https://www.youtube.com/embed/7lDkTiwpb8I?autoplay=0" frameborder="0" ></iframe>
+        
+        <div id="gameDescript"> <p>Game Description</p>  </div>
+             </div>
+        <input type="button" value="GO BACK">
+
+        <script> 
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txtTime').innerHTML =
+                h + ":" + m;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        
+        </script>
+
+
+    </body>
+
+</html>

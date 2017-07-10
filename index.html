@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head><title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body onload="startTime()">
+        
+        <div id="topBar">
+            <img class="vrcadeLogo" src="img/logo-yellow.png" width="260px">
+            <div id="txtTime"> </div>
+
+        </div>
+    <br>
+        <center>
+            <div class="flexbox-container"> 
+            <div id="main_box1"> <a id="titleBox"> <p>SHOOTERS</p> </a> </div>
+            <div id="main_box2"> <a id="titleBox"> <p>ADVENTURE</p> </a> </div>
+            <div id="main_box3"> <a id="titleBox"> <p>SIMULATION</p> </a> </div>
+            <div id="main_box4"> <a id="titleBox"> <p>HORROR</p> </a> </div>
+            <div id="main_box5"> <a id="titleBox"> <p>SPORTS</p> </a> </div>
+                </div>
+        </center>
+
+        <script> 
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txtTime').innerHTML =
+                h + ":" + m;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        
+        </script>
+
+
+    </body>
+
+</html>
